@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankStatement</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        table{
+            display: inline;
+            position: relative;
+            top: 90px;
+            left: 130px;
+            border: none;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        th, td{
+            border: 2px solid green;
+            padding: 10px 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        th{
+            background-color: lightgreen;
+            color: white;
+        }
+
+        td{
+            background-color: #f2f2f2;
+        }
+
+        td:hover {
+            background-color: white;
+            padding: 14px 24px;
+            cursor: pointer;
+        }
+
+        h1{
+            display: inline;
+            position: relative;
+            left: 629px;
+            top: 26px;
+        }
+        
+        .btn {
+            display: inline-block;
+            position: relative;
+            top: 200px;
+            right: 414px;
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid green;
+            color: green;
+            border-radius: 8px;
+            cursor: pointer;
+            background: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid green;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            background: green;
+        }
+
+        .date{
+            display: inline-block;
+            position: relative;
+            top: 251px;
+            left: 10px;
+        }
+
+        .time{
+            display: inline-block;
+            position: relative;
+            top: 276px;
+            left: -192px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BankStatement</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>AccountNo</th>
+            <th>Email</th>
+            <th>AccountType </th>
+            <th>CurrentBalance</th>
+        </tr>
+        {% for item in bank%}
+            <tr>
+               <td>{{item.Name}}</td>
+               <td>{{item.AccountNo}}</td>
+               <td>{{item.Email}}</td>
+               <td>{{item.AccountType}}</td>
+               <td>{{item.CurrentBalance}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/"><button class="btn">Back</button></a>
+    <button onclick="window.print()" class="btn">Print</button>
+    <a href="data"><button class="btn">View Customers</button></a>
+    <p class="date"><b>Date:</b><span id="date"></span></p>
+    <p class="time"><b>Time:</b><span id="time"></span><span id="duration"></span></p>
+
+    <script>
+        let a;
+        let date;
+        let time;
+        const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+        a = new Date();
+        date = a.toLocaleDateString(undefined,options);
+        time = a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
+        document.getElementById('date').innerHTML = date;
+        document.getElementById('time').innerHTML = time;
+        if (a.getHours() >=0 && a.getHours() <=12){
+            document.getElementById('duration').innerHTML = " AM";
+        }
+        else{
+            document.getElementById('duration').innerHTML = " PM";
+        }
+    </script>
+</body>
+</html>

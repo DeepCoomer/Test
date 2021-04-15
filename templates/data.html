@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        table {
+            display: inline;
+            position: relative;
+            top: 154px;
+            left: -275px;
+            border: none;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        th,
+        td {
+            border: 2px solid green;
+            padding: 10px 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        th {
+            background-color: lightgreen;
+            color: white;
+        }
+
+        td {
+            background-color: #f2f2f2;
+        }
+
+        td:hover{
+            background-color: white;
+            padding: 14px 24px;
+            cursor: pointer;
+        }
+
+        h1 {
+            display: inline;
+            position: relative;
+            left: 629px;
+            top: 26px;
+        }
+
+        .btn {
+            display: inline-block;
+            position: relative;
+            top: 79px;
+            right: -335px;
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid green;
+            color: green;
+            border-radius: 8px;
+            cursor: pointer;
+            background: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid green;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Customer Data</h1>
+    <a href="/"><button class="btn">Back</button></a>
+    <a href="transfer_money"><button class="btn">Transfer Money</button></a>
+    <a href="transfer_history"><button class="btn">Transfer History</button></a>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>AccountNo</th>
+            <th>Email</th>
+            <th>AccountType </th>
+            <th>CurrentBalance(Rs)</th>
+        </tr>
+        {% for item in customers %}
+        <tr>
+            <td>{{item.Name}}</td>
+            <td>{{item.AccountNo}}</td>
+            <td>{{item.Email}}</td>
+            <td>{{item.AccountType}}</td>
+            <td>{{item.CurrentBalance}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransferMoney</title>
+    
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            display: inline-block;
+            position: relative;
+            height: 375px;
+            width: 465px;
+            background-color: #f2f2f2;
+            border: 2px solid green;
+            top: 93px;
+            left: 314px;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        #text1 {
+            display: inline-block;
+            position: relative;
+            top: 25px;
+            left: 70px;
+            height: 30px;
+            width: 300px;
+            box-sizing: border-box;
+            border-radius: 9px;
+            padding: 2px 5px;
+        }
+
+        #text2 {
+            display: inline-block;
+            position: relative;
+            top: 25px;
+            left: 31px;
+            height: 30px;
+            width: 300px;
+            box-sizing: border-box;
+            border-radius: 9px;
+            padding: 2px 5px;
+        }
+
+        #text3 {
+            display: inline-block;
+            position: relative;
+            top: 25px;
+            left: 59px;
+            height: 30px;
+            width: 300px;
+            box-sizing: border-box;
+            border-radius: 9px;
+            padding: 2px 5px;
+        }
+
+        #text4 {
+            display: inline-block;
+            position: relative;
+            top: 25px;
+            left: 20px;
+            height: 30px;
+            width: 300px;
+            box-sizing: border-box;
+            border-radius: 9px;
+            padding: 2px 5px;
+        }
+
+        #text5 {
+            display: inline-block;
+            position: relative;
+            top: 25px;
+            left: 80px;
+            height: 30px;
+            width: 300px;
+            box-sizing: border-box;
+            border-radius: 9px;
+            padding: 2px 5px;
+        }
+
+
+        .name {
+            display: inline-block;
+            position: relative;
+            top: 22px;
+        }
+
+        .accountno {
+            display: inline-block;
+            position: relative;
+            top: 22px;
+        }
+
+        .amount {
+            display: inline-block;
+            position: relative;
+            top: 22px;
+        }
+
+        .btn {
+            display: inline-block;
+            position: relative;
+            top: 27px;
+            left: 193px;
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid green;
+            color: green;
+            border-radius: 8px;
+            cursor: pointer;
+            background: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: green;
+            color: white;
+        }
+
+        h1 {
+            display: inline-block;
+            position: relative;
+            left: 665px;
+            top: -227px;
+        }
+
+        .btn1 {
+            display: inline-block;
+            position: relative;
+            top: 257px;
+            left: -141px;
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid green;
+            color: green;
+            border-radius: 8px;
+            cursor: pointer;
+            background: none;
+            font-weight: bold;
+        }
+
+        .btn1:hover {
+            background-color: green;
+            color: white;
+        }
+
+        .messagefailed{
+            display: inline-block;
+            position: relative;
+            background-color: lightblue;
+            opacity: 0.5;
+            width: 1499px;
+            padding: 8px 10px;
+            top: 192px;
+            right: 0px;
+        }
+
+        .messagesuccess{
+            display: inline-block;
+            position: relative;
+            background-color: lightgreen;
+            opacity: 0.5;
+            width: 1499px;
+            padding: 8px 10px;
+            top: 192px;
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Transfer Money</h1>
+    <div class="container">
+        <form action="/transfer_money" method="POST">
+            {% csrf_token %}
+            <label for="SName" class="name">Sender Name:</label>
+            <input type="text" name="SenderName" id="text1" required><br><br>
+            <label for="SAccountNo" class="accountno">Sender Account No:</label>
+            <input type="text" name="SenderAccountNo" id="text2" required><br><br>
+            <label for="RName" class="name">Reciever Name:</label>
+            <input type="text" name="RecieverName" id="text3" required><br><br>
+            <label for="RAccountNo" class="accountno">Reciever Account No:</label>
+            <input type="text" name="RecieverAccountNo" id="text4" required><br><br>
+            <label for="Amount" class="amount">Amount(Rs):</label>
+            <input type="text" name="Amount" id="text5" required><br><br>
+            <button type="submit" class="btn" onclick="Send()">Send</button>
+        </form>
+    </div>
+    <a href="/"><button class="btn1">Back</button></a>
+    <a href="bank_statement"><button class="btn1">Bank Statement</button></a>
+    <a href="data"><button class="btn1">View Customers</button></a>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="{{message.tags}} messagefailed">
+       <strong style="color:white; font-weight: bolder;">{{message}}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+    
+    <!-- <script>
+        function Send(){
+            document.getElementById('messagesuccess').innerHTML = "Transaction Succesful"
+        }
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Bank</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            position: sticky;
+            top: 0px;
+            cursor: pointer;
+        }
+
+        .logo {
+            display: inline;
+            position: relative;
+            align-items: initial;
+            filter: invert(100%);
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border: 2px solid white;
+            border-radius: 150px;
+        }
+
+        .nav-list {
+            display: flex;
+            width: 50%;
+            /* background-color: black; */
+            align-items: center;
+            /* justify-content: center; */
+        }
+
+        .nav-list li {
+            list-style: none;
+            padding: 26px 30px;
+        }
+
+        .nav-list li a {
+            display: inline;
+            position: relative;
+            left: 1080px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-list li a:hover {
+            color: green;
+            border: 2px solid green;
+            border-radius: 50px;
+            padding: 10px;
+            margin: 5px 2px;
+        }
+
+        .nav-list li a.active {
+            color: green;
+            border: 2px solid green;
+            border-radius: 50px;
+            padding: 10px;
+            margin: 5px 2px;
+        }
+
+        .background {
+            background: rgb(0, 0, 0, 0.7) url('/static/img/background3.jpg') no-repeat;
+            background-size: cover;
+            background-blend-mode: darken;
+        }
+
+        .firstSection {
+            height: 100vh;
+        }
+
+        .box-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            max-width: 50%;
+            margin: auto;
+            height: 75%;
+        }
+
+        .firstHalf {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-big {
+            font-size: 38px;
+        }
+
+        .text-small {
+            font-size: 18px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid green;
+            color: green;
+            border-radius: 8px;
+            cursor: pointer;
+            background: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid green;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            background: green;
+        }
+
+        #about {
+            background-color: #f2f2f2;
+            height: 511px;
+        }
+
+        .secRight {
+            display: flex;
+            height: 500px;
+            align-items: center;
+            justify-content: space-evenly;
+            max-width: 80%;
+            margin: auto;
+            /* font-family: 'Ubuntu', sans-serif; */
+        }
+
+        .paras {
+            padding: 0px 65px;
+        }
+
+        .secLeft {
+            display: flex;
+            height: 500px;
+            align-items: center;
+            justify-content: space-evenly;
+            max-width: 80%;
+            margin: auto;
+            flex-direction: row-reverse;
+            /* font-family: 'Ubuntu', sans-serif; */
+        }
+
+        #contact {
+            background-color: #f2f2f2;
+            height: 560px;
+        }
+
+        #contact p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #contact .text {
+            display: inline;
+            position: relative;
+            left: 600px;
+            width: 350px;
+            height: 30px;
+            border-radius: 10px;
+            border: 2px solid white;
+            background-color: wheat;
+            padding: 10px 20px;
+        }
+
+        #contact .label {
+            display: inline;
+            position: relative;
+            left: 605px;
+        }
+
+        #contact .btn-label {
+            display: inline;
+            position: relative;
+            left: 730px;
+        }
+        textarea{
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar background">
+        <div class="logo">
+            <img src="/static/img/logo.png" alt="" srcset="">
+        </div>
+        <ul class="nav-list">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="background firstSection" id="home">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">Welcome to Your Own ABC Bank</p>
+                <p class="text-small">The future of banking is here. Where Your device becomes your Bank</p>
+                <div class="buttons">
+                    <a href="bank_statement"><button class="btn">Bank Statement</button></a>
+                    <a href="transfer_money"><button class="btn">Transfer Money</button></a>
+                    <br>
+                    <a href="transfer_history"><button class="btn">Transfer History</button></a>
+                    <a href="data"><button class="btn">View Customer</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <section id="about">
+        <section class="secRight">
+            <div class="paras">
+                <p class="sectionTag text-big">Who Are We?</p>
+                <p class="sectionsubTag text-small">We are a team of dedicated technical experts working for making your banking experience more smooth effective and haze free.
+                    Now your laptop,PC,or your mobile can become your bank.Using this website you can transfer money to other account holders, get your bankstatement print it or
+                    save it as proof for future use, get your transfer history etc
+                </p>
+            </div>
+            <div class="thumbnail">
+                <img src="/static/img/background.jpg" alt="thumbnail" class="imgFluid"
+                    style="height: 250px; width:250px; border-radius: 150px;">
+            </div>
+        </section>
+    </section>
+    <br>
+    <section id="contact">
+        <p class="sectionTag text-big">Contact</p><br>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="name" class="label">Name:</label><br><br>
+            <input type="text" name="name" id="" class="text"><br><br>
+            <label for="email" class="label">Email:</label><br><br>
+            <input type="text" name="email" id="" class="text"><br><br>
+            <label for="phoneno" class="label">Phone No:</label><br><br>
+            <input type="text" name="phoneno" id="" class="text"><br><br>
+            <label for="Report" class="label">Report:</label><br><br>
+            <textarea name="Report" class="text" id="" cols="30" rows="40"></textarea><br><br>
+            <button type="submit" class="btn btn-label">Submit</button>
+        </form>
+    </section>
+</body>
+
+</html>

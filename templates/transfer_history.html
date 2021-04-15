@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransferHistory</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        table {
+            display: inline;
+            position: relative;
+            top: 166px;
+            left: 61px;
+            border: none;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        th,
+        td {
+            border: 2px solid green;
+            padding: 10px 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        th {
+            background-color: lightgreen;
+            color: white;
+        }
+
+        td {
+            background-color: #f2f2f2;
+        }
+
+        td:hover {
+            background-color: white;
+            padding: 14px 24px;
+            cursor: pointer;
+        }
+
+        h1 {
+            display: inline;
+            position: relative;
+            left: 629px;
+            top: 26px;
+        }
+
+        .btn {
+            display: inline-block;
+            position: relative;
+            top: 95px;
+            right: 562px;
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid green;
+            color: green;
+            border-radius: 8px;
+            cursor: pointer;
+            background: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid green;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Transfer History</h1>
+    <table>
+        <tr>
+            <th>SenderName</th>
+            <th>SenderAccountNo</th>
+            <th>RecieverName</th>
+            <th>RecieverAccountNo</th>
+            <th>Amount(Rs)</th>
+            <th>DateTime</th>
+        </tr>
+        {% for item in transfer%}
+        <tr>
+            <td>{{item.SenderName}}</td>
+            <td>{{item.SenderAccountNo}}</td>
+            <td>{{item.RecieverName}}</td>
+            <td>{{item.RecieverAccountNo}}</td>
+            <td>{{item.Amount}}</td>
+            <td>{{item.Date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/"><button class="btn">Back</button></a>
+    <button onclick="window.print()" class="btn">Print</button>
+    <a href="data"><button class="btn">View Customers</button></a>
+</body>
+
+</html>
