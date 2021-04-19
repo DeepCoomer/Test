@@ -9,7 +9,7 @@ The Sparks Foundation thesparksfoundation internship #GRIPAPR21 #TSF #GRIP #webd
 ![image](https://user-images.githubusercontent.com/75359203/114749719-d7f52f80-9d70-11eb-8954-8a707195d217.png)
 
 **2.Transaction Page**
-![image](https://user-images.githubusercontent.com/75359203/114911083-4652f400-9e3c-11eb-94a9-b7ff2ad66800.png)
+![image](https://user-images.githubusercontent.com/75359203/115207901-a803ae80-a119-11eb-908a-f8c9102a7be8.png)
 
 ![image](https://user-images.githubusercontent.com/75359203/115206812-9a99f480-a118-11eb-8c7c-b2fdd364713f.png)
 
